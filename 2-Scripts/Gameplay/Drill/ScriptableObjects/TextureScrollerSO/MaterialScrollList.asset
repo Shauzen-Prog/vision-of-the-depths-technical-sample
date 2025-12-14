@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44cd3b43988f1746bbb6bf9f21e1585, type: 3}
+  m_Name: MaterialScrollList
+  m_EditorClassIdentifier: 
+  configs:
+  - type: 0
+    texture: {fileID: 2800000, guid: a2f9bd8eb32ca914f929d97ea7189ce6, type: 3}
+    scrollSpeed: {x: 0, y: 0.1}
+    shakeStrength: 1.4
+    shakeDuration: 2.42
+    shakeFrequency: 8.46
+  - type: 1
+    texture: {fileID: 2800000, guid: fe336dc7721d4084fb143093c50e5c95, type: 3}
+    scrollSpeed: {x: 0, y: 0.3}
+    shakeStrength: 0.52
+    shakeDuration: 2.32
+    shakeFrequency: 2.54
+  - type: 2
+    texture: {fileID: 2800000, guid: 89ceb5cb2aa2f6548808e9214641d28d, type: 3}
+    scrollSpeed: {x: 0, y: 0.7}
+    shakeStrength: 0.1
+    shakeDuration: 0.2
+    shakeFrequency: 1.8
+  - type: 3
+    texture: {fileID: 2800000, guid: 88d6f625a99b6b6459b6862b01224219, type: 3}
+    scrollSpeed: {x: 0, y: 0.5}
+    shakeStrength: 0.64
+    shakeDuration: 0.91
+    shakeFrequency: 1.34
+  - type: 4
+    texture: {fileID: 2800000, guid: 5fde398196d648a459cef771886b7de8, type: 3}
+    scrollSpeed: {x: 0, y: 0.5}
+    shakeStrength: 1.97
+    shakeDuration: 2.7
+    shakeFrequency: 3.09
+  - type: 5
+    texture: {fileID: 2800000, guid: 989359cdd58d8324a8a3ac2d4fc8470d, type: 3}
+    scrollSpeed: {x: 0, y: 0.12}
+    shakeStrength: 1.02
+    shakeDuration: 5
+    shakeFrequency: 1.31
+  - type: 6
+    texture: {fileID: 2800000, guid: badf728ce58d780409efaae3c0ea6bf2, type: 3}
+    scrollSpeed: {x: 0, y: 0.2}
+    shakeStrength: 1.04
+    shakeDuration: 0.3
+    shakeFrequency: 3.9
+  - type: 7
+    texture: {fileID: 2800000, guid: b8aca168ce808ae4398f1373a75fe88c, type: 3}
+    scrollSpeed: {x: 0, y: 0.1}
+    shakeStrength: 1.49
+    shakeDuration: 20
+    shakeFrequency: 20
+  - type: 8
+    texture: {fileID: 2800000, guid: a579a2f753618d840ae3376228487136, type: 3}
+    scrollSpeed: {x: 0, y: 0.3}
+    shakeStrength: 0.07
+    shakeDuration: 1.06
+    shakeFrequency: 8.79
+  - type: 9
+    texture: {fileID: 2800000, guid: 94f15c9e5931b084ba9a887c31556a6c, type: 3}
+    scrollSpeed: {x: 0, y: 0.3}
+    shakeStrength: 0.07
+    shakeDuration: 1.06
+    shakeFrequency: 8.79

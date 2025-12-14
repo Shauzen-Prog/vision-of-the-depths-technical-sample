@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c8c28d4058a3340a0e6ab644f9283e, type: 3}
+  m_Name: SceneRef_BreakingPoint
+  m_EditorClassIdentifier: 
+  _mainSceneAsset: {fileID: 102900000, guid: 39475d281ad43da4981bf42e3fb2f59e, type: 3}
+  _mainSceneName: 3-BreakingPointTest
+  _additiveScenes:
+  - _sceneAsset: {fileID: 102900000, guid: f3b30ab0b187b974f8e96732b1f7b014, type: 3}
+    _sceneName: 3-Lights
+    _role: 1

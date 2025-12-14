@@ -1,0 +1,21 @@
+{
+    "name": "EditModeTest",
+    "rootNamespace": "",
+    "references": [
+        "UnityEditor.TestRunner",
+        "GameCore"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

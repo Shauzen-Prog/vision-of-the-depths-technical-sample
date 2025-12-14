@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8d6d03e20f8e04eb5f919fddce079e, type: 3}
+  m_Name: LoadBreakingPointAndTP
+  m_EditorClassIdentifier: 
+  _breakingPointLoadAdditive:
+  - {fileID: 11400000, guid: 38857455f9562a0428ac6be2d2807e7a, type: 2}
+  - {fileID: 11400000, guid: 53ccf9c8a9443a44a87f2bf2f05f64a1, type: 2}
+  _breakingPointUnloadAdditive:
+  - {fileID: 11400000, guid: 901907cd2c9906441a9e240a334c5c46, type: 2}
+  _breakingPointSpawnTag: CheatSpawn_BreakingPoint
