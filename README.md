@@ -1,144 +1,168 @@
 # Vision of the Depths – Technical Sample
-### Unity Gameplay Systems Overview
+
+**TL;DR:** A Unity 6 technical gameplay sample focused on clean, decoupled systems and solid architectural foundations for scalable projects.
+
+---
+
+## If You Have 5 Minutes
+
+If you don’t have time to read the full README, these files provide a **high-signal overview** of how the project is architected and how gameplay systems are designed:
+
+- **EventBus**  
+  Central, non-static, testable event system used to decouple gameplay, dialogue, closeups, and scene routing.
+
+- **PlayerFacade + PlayerFacadeService**  
+  Single access point to the player, safe to use across additive scenes and fully decoupled from presentation.
+
+- **SceneRouter**  
+  Additive scene routing with async loading, preload support, controlled activation, and transition abstraction.
+
+- **CloseupInteractionV2**  
+  Interaction system integrating cameras, player control locking, dialogue coordination, and additive scenes.
+
+- **Drill HFSM**  
+  Core gameplay mechanic implemented as a hierarchical finite state machine, fully decoupled from UI, audio, and VFX.
+
+These files reflect a focus on **maintainability, testability, and team-friendly gameplay architecture**.
 
 ---
 
 ## Overview
 
-**Vision of the Depths** es un proyecto desarrollado en **Unity 6** como parte de una tesis de desarrollo de videojuegos.
+**Vision of the Depths** is a project developed in **Unity 6** as part of a game development thesis.
 
-El foco principal del proyecto está puesto en la **arquitectura de sistemas**, la **modularidad**, el **desacoplamiento** y la **preparación para extensión y testeo**, más que en el contenido artístico o visual.
+The main focus of the project is on **systems architecture**, **modularity**, **decoupling**, and **preparation for extension and testing**, rather than on visual or artistic content.
 
-El juego es una experiencia narrativa de **terror psicológico sci-fi**, pero este repositorio público contiene **únicamente un subset curado del código**, con el objetivo de mostrar **criterios técnicos y decisiones de diseño de sistemas**.
+The game itself is a **sci-fi psychological horror narrative experience**, but this public repository contains **only a curated subset of the code**, intended to showcase **technical decision-making and gameplay systems design**.
 
-> Este repositorio no representa el proyecto completo del juego, sino un **technical sample orientado a gameplay y systems programming**.
+> This repository does not represent the full game project, but rather a **technical sample focused on gameplay and systems programming**.
 
 ---
 
 ## Architectural Approach
 
-El proyecto está construido bajo una filosofía de **arquitectura modular**, priorizando:
+The project is built around a **modular architecture philosophy**, prioritizing:
 
-- Bajo acoplamiento entre sistemas  
-- Comunicación desacoplada mediante eventos  
-- Separación clara de responsabilidades  
-- Preparación para extensión futura  
-- Facilidad de testeo y mantenimiento  
+- Low coupling between systems  
+- Event-driven, decoupled communication  
+- Clear separation of responsibilities  
+- Future extensibility  
+- Ease of testing and maintenance  
 
 ---
 
-## Principios y Técnicas Utilizadas
+## Principles & Techniques Used
 
-- Dependency Injection (**Zenject**)
-- Event-Driven Architecture (**EventBus**)
-- Facade Pattern para sistemas complejos (Player)
-- State Machines / **HFSM** para lógica de gameplay
-- ScriptableObjects para configuraciones y tooling data-driven
-- Uso extensivo de **interfaces** para desacoplar contratos
+- Dependency Injection (**Zenject**)  
+- Event-Driven Architecture (**EventBus**)  
+- Facade Pattern for complex systems (Player)  
+- State Machines / **HFSM** for gameplay logic  
+- ScriptableObjects for data-driven configuration and tooling  
+- Extensive use of **interfaces** to define clear contracts  
 
 ---
 
 ## Core Architecture
 
-El proyecto cuenta con una capa **Core reutilizable**, independiente del gameplay específico, que incluye:
+The project includes a **reusable Core layer**, independent from game-specific gameplay logic, which provides:
 
-- **EventBus global** para comunicación desacoplada
-- **Scene Routing System** con soporte para:
-  - escenas aditivas
+- A **global EventBus** for decoupled communication  
+- A **Scene Routing System** supporting:
+  - additive scenes
   - preload
   - unload
-- **Abstracciones de Input** desacopladas del Unity Input System
-- **Arquitectura base de Interaction** reutilizable
-- **HFSM genérico** basado en coroutines
+- **Input abstractions** decoupled from the Unity Input System  
+- A reusable **Interaction architecture**  
+- A **generic HFSM** implementation based on coroutines  
 
-Esta capa está pensada para ser reutilizable en otros proyectos.
+This layer is designed to be reusable across other projects.
 
 ---
 
-## Gameplay Systems Destacados
+## Gameplay Systems
 
-### Player Modular (Facade + Input desacoplado)
+### Modular Player (Facade + Decoupled Input)
 
-- Implementación de un **PlayerFacade** como punto único de acceso al jugador
-- Input completamente desacoplado mediante puertos
-- Separación clara entre:
-  - Dominio
-  - Aplicación
-  - Presentación
-- Preparado para bloquear capacidades específicas:
+- **PlayerFacade** implemented as a single access point to the player  
+- Input fully decoupled via input ports  
+- Clear separation between:
+  - Domain
+  - Application
+  - Presentation  
+- Designed to selectively block player capabilities:
   - movement
   - look
   - pause
-  - closeups
+  - closeups  
 
 ---
 
 ### Interaction System + Closeup System
 
-- Sistema de interacción basado en **interfaces y contexto**
-- Targets de interacción desacoplados del input
-- **Closeup System** con:
-  - prioridades
+- Interaction system based on **interfaces and interaction context**  
+- Interaction targets fully decoupled from input handling  
+- **Closeup system** supporting:
+  - priorities
   - requests
-  - bloqueo de control del jugador
-- Integración limpia con diálogos y escenas aditivas
+  - player control locking  
+- Clean integration with dialogue system and additive scenes  
 
 ---
 
-### Drill HFSM (Core Mecánico)
+### Drill HFSM (Core Gameplay Mechanic)
 
-- **Hierarchical Finite State Machine** dedicada al drill
-- Estados y sub-estados claramente separados
-- Lógica de gameplay completamente desacoplada de:
+- **Hierarchical Finite State Machine** dedicated to the drill mechanic  
+- Clear separation of states and substates  
+- Gameplay logic fully decoupled from:
   - UI
   - Audio
-  - VFX
-- Comunicación vía eventos
-- Ejemplo de **mecánica core con arquitectura extensible**
+  - VFX  
+- Event-based communication  
+- Example of a core gameplay system designed with extensibility in mind  
 
 ---
 
 ### Scene Routing / Additive Loading
 
-- Sistema de navegación de escenas desacoplado
-- Soporte para:
-  - cambio inmediato
-  - carga asíncrona con progreso
-  - escenas aditivas
-  - preload sin activación
-- Uso de **SceneReferenceObject** para evitar strings hardcodeados
-- Preparado para futura integración con Addressables
+- Decoupled scene navigation system  
+- Supports:
+  - immediate transitions
+  - asynchronous loading with progress reporting
+  - additive scenes
+  - preload without activation  
+- Uses **SceneReferenceObject** to avoid hard-coded strings  
+- Prepared for future **Addressables** integration  
 
 ---
 
 ### EventBus
 
-- EventBus central para desacoplar sistemas
-- Uso extensivo en:
+- Central EventBus used to decouple systems  
+- Extensively used across:
   - gameplay
-  - diálogos
+  - dialogues
   - closeups
-  - drill
-  - scene routing
-- Incluye **tests unitarios básicos** de publish / subscribe
+  - drill logic
+  - scene routing  
+- Includes **basic unit tests** validating publish / subscribe behavior  
 
 ---
 
 ### Cheats & Tools (Data-Driven)
 
-- Sistema de cheats pensado como **herramienta de desarrollo**
-- Configuración data-driven mediante ScriptableObjects
-- Útil para:
-  - debug
+- Cheat system designed as a **development and debugging tool**  
+- Fully data-driven via ScriptableObjects  
+- Useful for:
+  - debugging
   - QA
-  - iteración rápida
-- Ejemplo de tooling diseñado desde arquitectura
+  - rapid iteration  
+- Example of tooling designed with architecture in mind  
 
 ---
 
-## Estructura del Repositorio
+## Repository Structure
 
-Este repositorio contiene únicamente código:
+This repository contains **code only**:
 
 2-Scripts/
 
@@ -150,41 +174,45 @@ Este repositorio contiene únicamente código:
 
 └── Tests/
 
-No incluye:
+It does **not** include:
 
-- Assets
-- Escenas
-- Audio
-- UI visual
-- Arte
-
----
-
-## Material Adicional
-
-- 🎥 Video técnico corto (overview de arquitectura)
-- 🎥 Video técnico largo (deep dive de sistemas)
-- 🎮 Build jugable (fuera de este repositorio)
+- Assets  
+- Scenes  
+- Audio  
+- Visual UI  
+- Art  
 
 ---
 
-## Objetivo del Repositorio
+## Additional Material
 
-Este repositorio está pensado para:
-
-- Mostrar **criterio arquitectónico**
-- Evidenciar pensamiento en **extensibilidad**
-- Demostrar buenas prácticas de **gameplay systems**
-- Servir como **portfolio técnico**
+- 🎮 **Playable technical prototype** (Windows)
+  
+  https://alesc.itch.io/vision-of-the-depths-technical-prototype
+  
+- 🎥 **1 minute technical overview video** (architecture & systems highlight)
+  
+  https://www.youtube.com/watch?v=7rdFdFWgqtQ
 
 ---
 
-## Notas Finales
+## Repository Purpose
 
-Este proyecto prioriza **cómo están diseñados los sistemas**, no su complejidad visual.
+This repository is intended to:
 
-Cada sistema fue pensado para ser:
-- escalable
-- testeable
-- mantenible
-- fácil de razonar en equipo
+- Showcase architectural decision-making  
+- Demonstrate extensibility-oriented design  
+- Highlight good practices for gameplay systems  
+- Serve as a technical portfolio sample  
+
+---
+
+## Final Notes
+
+This project prioritizes **how systems are designed**, not visual complexity.
+
+Each system was built to be:
+- scalable  
+- testable  
+- maintainable  
+- easy to reason about in a team environment  
