@@ -133,9 +133,13 @@ public class ProjectInstaller : MonoInstaller
         Container.Bind<IEyeBlinkService>()
             .To<EyeBlinkService>()
             .AsSingle();
+            
+        Container.Bind<ICheatService>()
+            .To<NoopCheatService>()
+            .AsSingle();
         
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-        Container.Bind<ICheatService>()
+        Container.Rebind<ICheatService>()
             .To<CheatService>()
             .AsSingle();
 
