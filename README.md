@@ -188,7 +188,7 @@ It does **not** include:
 
 - 🎮 **Playable technical prototype** (Windows)
   
-  https://alesc.itch.io/vision-of-the-depths-technical-prototype
+  https://alesc.itch.io/vision-of-the-depths
   
 - 🎥 **1 minute technical overview video** (architecture & systems highlight)
   
