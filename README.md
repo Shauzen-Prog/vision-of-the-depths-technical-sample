@@ -1,6 +1,6 @@
 # Vision of the Depths – Technical Sample
 
-**TL;DR:** A Unity 6 technical gameplay sample focused on clean, decoupled systems and solid architectural foundations for scalable projects.
+**TL;DR:** A curated technical sample extracted from *Vision of the Depths*, a Unity 6 vertical slice focused on scalable gameplay architecture, modular systems, and maintainable team-oriented code.
 
 ---
 
@@ -29,13 +29,13 @@ These files reflect a focus on **maintainability, testability, and team-friendly
 
 ## Overview
 
-**Vision of the Depths** is a project developed in **Unity 6** as part of a game development thesis.
+**Vision of the Depths** is a sci-fi psychological horror project developed in **Unity 6** as part of a vertical slice production.
 
-The main focus of the project is on **systems architecture**, **modularity**, **decoupling**, and **preparation for extension and testing**, rather than on visual or artistic content.
+The project focuses on building a **robust gameplay architecture** suitable for a team environment, emphasizing modular systems, decoupling, and long-term maintainability.
 
-The game itself is a **sci-fi psychological horror narrative experience**, but this public repository contains **only a curated subset of the code**, intended to showcase **technical decision-making and gameplay systems design**.
+This public repository contains a **curated subset of the codebase extracted from the vertical slice**, highlighting the architectural decisions and gameplay systems implemented during development.
 
-> This repository does not represent the full game project, but rather a **technical sample focused on gameplay and systems programming**.
+> The full game project includes additional gameplay, assets, and scenes which are not included here. This repository focuses specifically on the **gameplay systems and architecture layer**.
 
 ---
 
@@ -198,18 +198,15 @@ It does **not** include:
 
 ## Repository Purpose
 
-This repository is intended to:
+This repository provides a **technical view into the architecture and gameplay systems used in the Vision of the Depths vertical slice**.
 
-- Showcase architectural decision-making  
-- Demonstrate extensibility-oriented design  
-- Highlight good practices for gameplay systems  
-- Serve as a technical portfolio sample  
-
+The goal is to highlight how core systems were designed to support a scalable and maintainable production pipeline.
+  
 ---
 
 ## Final Notes
 
-This project prioritizes **how systems are designed**, not visual complexity.
+This repository represents production code extracted from the *Vision of the Depths* vertical slice, rather than a standalone demo project.
 
 Each system was built to be:
 - scalable  
